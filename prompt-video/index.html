@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Turn a short prompt into an animated video locally in your browser.">
+  <title>Frame — Prompt Video Studio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header><a class="brand" href="./"><span class="brand-icon">◧</span> frame<span class="brand-dot">.</span></a><span class="local-badge"><i></i> LOCAL STUDIO</span></header>
+  <main>
+    <section class="intro"><p class="eyebrow">FROM A THOUGHT TO A MOVING PICTURE</p><h1>A little prompt.<br>A whole new <em>scene.</em></h1><p class="subtitle">Make an illustrated motion video, right here in your browser.<br>No account. No API key. Just an idea.</p></section>
+    <div class="workspace">
+      <section class="controls" aria-label="Video settings">
+        <div class="section-title"><span class="step">01</span><h2>Describe your scene</h2></div>
+        <label for="prompt">Your prompt</label>
+        <textarea id="prompt" maxlength="1000" rows="5" placeholder="A rocket drifts through a purple galaxy. Stars sparkle around a distant planet.">A rocket drifts through a purple galaxy. Stars sparkle around a distant planet.</textarea>
+        <div class="prompt-meta"><span>Separate sentences become caption cards.</span><span id="count">0 / 1000</span></div>
+        <div class="examples"><button type="button" data-prompt="Golden sunlight over rolling mountains. A quiet morning begins.">↗ Mountain morning</button><button type="button" data-prompt="Waves roll across a turquoise ocean. The sun sets on the horizon.">↗ Ocean escape</button><button type="button" data-prompt="A neon city glows in the rain. A train glides past the skyline.">↗ Neon city</button></div>
+        <div class="settings-grid"><div><label for="theme">Scene</label><select id="theme"><option value="auto">Match my prompt</option><option value="space">Space voyage</option><option value="mountains">Mountain escape</option><option value="ocean">Ocean sunset</option><option value="city">City lights</option></select></div><div><label for="duration">Duration</label><select id="duration"><option value="6">6 seconds</option><option value="10" selected>10 seconds</option><option value="15">15 seconds</option><option value="20">20 seconds</option></select></div><div><label for="format">Format</label><select id="format"><option value="landscape">Landscape · 16:9</option><option value="portrait">Portrait · 9:16</option><option value="square">Square · 1:1</option></select></div><div><label for="palette">Colour mood</label><select id="palette"><option value="auto">Match my prompt</option><option value="violet">Violet dusk</option><option value="warm">Golden hour</option><option value="cool">Ocean blue</option></select></div></div>
+        <label class="checkbox"><input id="captions" type="checkbox" checked> Show prompt captions</label>
+        <button id="generate" class="primary" type="button">Create preview <span>↗</span></button>
+        <p class="note">Procedural illustration, not generative AI. Prompts select a scene and colour mood; your words appear as captions. Exports are silent.</p>
+      </section>
+      <section class="preview-panel" aria-label="Video preview">
+        <div class="preview-heading"><div class="section-title"><span class="step">02</span><h2>Your screening room</h2></div><span id="scene-tag" class="scene-tag">SPACE VOYAGE</span></div>
+        <div class="stage"><canvas id="canvas" width="1280" height="720" aria-label="Animated video preview"></canvas><span class="stage-label">FRAME / ORIGINAL</span></div>
+        <div class="transport"><button id="play" type="button" aria-label="Pause preview">Ⅱ</button><input id="timeline" aria-label="Video position" type="range" min="0" max="1000" value="0"><span id="time">00:00 / 00:10</span></div>
+        <div class="export-row"><div><strong id="video-details">1280 × 720 · 30 fps</strong><p>Your scene stays on this device.</p></div><button id="export" class="export-button" type="button">↓ Export video</button></div>
+        <progress id="progress" max="100" value="0" hidden aria-label="Export progress"></progress>
+        <p id="status" role="status" aria-live="polite">Preview ready. Change your prompt to make it yours.</p>
+        <a id="download" class="download" hidden>Download your video</a>
+        <video id="result" controls hidden aria-label="Exported video playback"></video>
+      </section>
+    </div>
+    <footer><span>SMALL IDEAS. MOVING STORIES.</span><span>Made locally. Yours to keep.</span></footer>
+  </main>
+</body>
+</html>

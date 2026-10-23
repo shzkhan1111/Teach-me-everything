@@ -1,0 +1,29 @@
+FRAME - PORTABLE LCM VIDEO STUDIO
+
+WATCH THE LESSON
+Open LCM-lesson-with-voice.mp4 in a browser or video player.
+This is the complete 54-second LCM lesson with spoken narration.
+
+USE THE APP
+1. Extract the ZIP into a folder. Do not run it from inside the ZIP.
+2. Open index.html in Chrome or Edge.
+3. Click "LCM lesson with voice" to watch the narrated lesson.
+4. "Watch the LCM lesson" opens the animated canvas version.
+5. Other scene prompts can be previewed and exported as silent videos.
+
+No installation, account, API key or internet connection is needed.
+If your browser restricts local files, use Node.js: run npm start in
+this folder and open http://127.0.0.1:4173.
+
+MOVE TO ANOTHER CODEX CHAT OR COMPUTER
+Upload the ZIP to the other Codex chat, or extract it into that chat's
+project workspace. Then say:
+"This is my Frame video project. Read START-HERE.txt and continue
+working on it. The LCM lesson with voice is already included."
+
+The app and finished videos are included. Tools used to generate
+the supplied narration and encode the finished video are not included.
+The general animation exporter remains silent; arbitrary prompts
+produce procedural illustrations rather than AI-generated footage.
+
+Only send LCM-lesson-with-voice.mp4 if you want to share the video alone.
